@@ -1,0 +1,4 @@
+obj\Debug\net6.0\Protos\v1/Country.cs \
+obj\Debug\net6.0\Protos\v1/CountryGrpc.cs: C:/Users/antho/.nuget/packages/grpc.tools/2.39.1/build/native/include/google/protobuf/empty.proto\
+ Protos/v1/country.shared.proto\
+ Protos/v1/country.proto
