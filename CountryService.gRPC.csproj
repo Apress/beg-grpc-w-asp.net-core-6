@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
+    <PackageReference Include="Grpc.AspNetCore.Web" Version="2.40.0" />
+    <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.40.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CountryService.BLL\CountryService.BLL.csproj" />
+    <ProjectReference Include="..\CountryService.DAL\CountryService.DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\v1\country.proto" Link="country.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\v1\country.browser.proto" Link="country.browser.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\v1\country.shared.proto" Link="country.shared.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+</Project>
