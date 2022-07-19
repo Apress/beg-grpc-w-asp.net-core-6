@@ -1,0 +1,10 @@
+﻿global using System;
+global using System.Threading.Tasks;
+global using System.Collections.Generic;
+global using System.Linq;
+global using Microsoft.EntityFrameworkCore;
+global using CountryService.Domain.Repositories;
+global using CountryService.DAL.Mappers;
+global using CountryService.DAL.Database;
+global using CountryService.Domain.Models;
+global using CountryService.DAL.Database.Entities;

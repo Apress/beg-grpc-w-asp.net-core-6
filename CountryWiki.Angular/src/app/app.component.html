@@ -1,0 +1,55 @@
+<div class="text-center">
+    <h1>CountryWiki.Angular</h1>
+</div>
+
+<div class="container mb-5 mt-5 text-center w-25">
+    <h2>Upload countries (JSON only): </h2>
+    <div class="mb-1 mt-1">
+        <input class="form-control" type="file" (change)="onChange($event)" />
+    </div>
+    <div class="mb-1 mt-1">
+        <button (click)="onUpload()" 
+                class="btn btn-success">
+                Upload
+        </button>
+    </div>
+    <div *ngIf="uploadResult !== null && !uploadResult.success" class="mb-2 mt-2 text-danger">
+        {{uploadResult.errorMessage}}
+    </div>
+    <div *ngIf="(uploadResult !== null && uploadResult.isProcessing) || isUploading" class="mb-2 mt-2 text-center text-danger">
+        <h2>A file upload is in progress...</h2>
+    </div>
+</div>
+
+<div class="container text-center">
+    <table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Capital City</th>
+            <th>Anthem</th>
+            <th>Spoken languages</th>
+            <th>Flag</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let country of countries">
+            <td>{{country.id}}</td>
+            <td>{{country.name}}</td>
+            <td>{{country.description}}</td>
+            <td>{{country.capitalCity}}</td>
+            <td>{{country.anthem}}</td>
+            <td>{{country.languages.join(', ')}}</td>
+            <td><img src="{{country.flagUri}}" alt="{{country.name}}" height="25" width="45" /></td>
+            <td><button (click)="onUpdate(country.id)" class="btn btn-secondary">Update</button></td>
+            <td><button (click)="onDelete(country)" class="btn btn-danger">Delete</button></td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+
+<router-outlet></router-outlet>

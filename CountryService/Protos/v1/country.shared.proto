@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option csharp_namespace = "CountryService.gRPC.Protos.v1";
+
+message CountryReply {
+	int32 Id = 1;
+	string Name = 2;
+	string Description = 3;
+	string FlagUri = 4;
+	string Anthem = 5;
+	string CapitalCity = 6;
+	repeated string Languages = 7;
+}
+
+message CountryIdRequest {
+	int32 Id = 1;
+}
+
+message CountryUpdateRequest {
+	int32 Id = 1;
+	string Description = 2;
+}
+
+message CountriesCreationRequest {
+	repeated CountryCreationRequest Countries = 1;
+}
+
+message CountryCreationRequest {
+	string Name = 1;
+	string Description = 2;
+	string FlagUri = 3;
+	string Anthem = 4;
+	string CapitalCity = 5;
+    repeated int32 Languages = 6;
+}
+
+message CountryCreationReply {
+	int32 Id = 1;
+	string Name = 2;
+}

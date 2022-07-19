@@ -1,0 +1,14 @@
+<div class="container mb-5 mt-5 text-center">
+    <h2>Edit Country - {{country.name}}</h2>
+    <div *ngIf="country">
+        <div>
+            <textarea rows="4" cols="50" name="description" [ngModel]="country?.description" (ngModelChange)="onChange($event)">{{country.description}}</textarea>
+        </div>
+        <div *ngIf="actionResult !== null && !actionResult.success" class="text-danger">
+            {{actionResult.errorMessage}}
+        </div>
+        <div>
+            <button (click)="onUpdate()">Update</button>
+        </div>
+    </div>
+</div>

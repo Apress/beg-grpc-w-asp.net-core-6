@@ -1,0 +1,57 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Country Wiki main page";
+}
+
+<div class="text-center">
+    <h1 class="display-5">Country Wiki main page</h1>
+</div>
+
+<form method="post" enctype="multipart/form-data">
+
+<div class="container mb-5 mt-5">
+    <div>
+    Upload countries (JSON only): 
+        <input type="file" asp-for="Upload" />
+    </div>
+    <div><input type="submit" value="Upload" asp-page-handler="upload"/></div>
+    <div class="text-danger">@Model.UploadErrorMessage</div>
+
+@if (Model.GlobalOptions.ProcessingUpload) {
+        <div class="text-center text-danger"><h2>A file upload is in progress...</h2></div>
+}
+</div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Capital City</th>
+                <th>Anthem</th>
+                <th>Spoken languages</th>
+                <th>Flag</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var country in Model.Countries)
+            {
+                <tr>
+                    <td>@country.Id  </td>
+                    <td>@country.Name</td>
+                    <td>@country.Description</td>
+                    <td>@country.CapitalCity</td>
+                    <td>@country.Anthem</td>
+                    <td>@string.Join(", ", country.Languages)</td>
+                    <td><img src="@country.FlagUri" alt="@country.Name" height="25" width="45" /></td>
+                    <td><a asp-page="./Edit" asp-route-id="@country.Id">Edit</a></td>
+                    <td><input type="submit" asp-page-handler="delete" asp-route-id="@country.Id" value="Delete" /></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

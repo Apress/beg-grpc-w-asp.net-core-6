@@ -1,0 +1,22 @@
+﻿@page
+@model EditModel
+@{
+}
+
+<h1>Edit Country - @Model.CountryName</h1>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <input asp-for="CountryToUpdate.Id" type="hidden" value="@Model.CountryToUpdate.Id" />
+    <div>
+        <label asp-for="CountryToUpdate.Description"></label>
+        <div>
+            <textarea rows="4" cols="50" name="@Html.NameFor(m => m.CountryToUpdate.Description)">@Model.CountryToUpdate.Description</textarea>
+        </div>
+        <div><span asp-validation-for="CountryToUpdate.Description" class="text-danger"></span></div>
+    </div>
+
+    <div>
+        <input type="submit" value="Save"/>
+    </div>
+</form>

@@ -1,0 +1,50 @@
+[
+	{
+		"name": "Canada",
+		"description": "Maple leaf country",
+		"capitalCity": "Ottawa",
+		"anthem": "O Canada !",
+		"flagUri": "https://anthonygiretti.blob.core.windows.net/countryflags/ca.png",
+		"languages": [1, 2]
+	},
+	{
+		"name": "Canada",
+		"description": "Maple leaf country. Imported twice from file, delete me",
+		"capitalCity": "Ottawa",
+		"anthem": "O Canada !",
+		"flagUri": "https://anthonygiretti.blob.core.windows.net/countryflags/ca.png",
+		"languages": [1, 2]
+	},
+	{
+		"name": "USA",
+		"description": "Uncle Sam country",
+		"capitalCity": "Washington",
+		"anthem": "The Star-Spangled Banner",
+		"flagUri": "https://anthonygiretti.blob.core.windows.net/countryflags/us.png",
+		"languages": [2, 3]
+	},
+	{
+		"name": "United Kingdom",
+		"description": "Sovereign country of North-western Europe",
+		"capitalCity": "London",
+		"anthem": "God save the Queen",
+		"flagUri": "https://anthonygiretti.blob.core.windows.net/countryflags/gb.png",
+		"languages": [1]
+	},
+	{
+		"name": "France",
+		"description": "Human rights country",
+		"capitalCity": "Paris",
+		"anthem": "La marseillaise",
+		"flagUri": "https://anthonygiretti.blob.core.windows.net/countryflags/fr.png",
+		"languages": [2]
+	},
+	{
+		"name": "Mexico",
+		"description": "Cradle of civilization country",
+		"capitalCity": "Mexico City",
+		"anthem": "Himno Nacional Mexicano",
+		"flagUri": "https://anthonygiretti.blob.core.windows.net/countryflags/mx.png",
+		"languages": [3]
+	}
+]

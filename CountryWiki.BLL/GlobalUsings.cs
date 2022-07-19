@@ -1,0 +1,9 @@
+﻿global using Microsoft.Extensions.Logging;
+global using System.Collections.Generic;
+global using System.IO;
+global using System.Threading.Tasks;
+global using System.Text.Json;
+global using System.Linq;
+global using CountryWiki.Domain.Models;
+global using CountryWiki.Domain.Repositories;
+global using CountryWiki.Domain.Services;
